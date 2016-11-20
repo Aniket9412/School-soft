@@ -1,0 +1,20 @@
+<div class='window'>
+    <h1 class='head'><strong>Return Book</strong></h1>
+    <hr></hr>
+    <table class="table table-striped">
+        <th>ID</th>
+        <th>Book_Name</th>
+        <th>Action</th>
+        <% @books.each do |b| %>
+        <tr>
+            <td> <%=b.id%> </td>
+            <td><%=b.book_name%></td>
+            <td> <a class="btn btn-danger btn-xs"<%=link_to 'delete',{:action =>'delete_book',:id => b.id}%> </td>
+        </tr>
+       
+        <% end %>
+    </table>
+   
+    <hr></hr>
+    <a class="btn btn-primary btn-xs"<%= link_to 'Back',{:action => 'library_details'}%>
+</div>

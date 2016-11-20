@@ -1,0 +1,38 @@
+<div class='window'>
+    
+    <h1 class='head'><strong>Library Details</strong></h1>
+    
+    <hr class='hr'></hr>
+    
+    <% if @studm.blank? %>
+        <p>There are no student library details is available</p>
+    <% else %>
+        <ol id = "studm">
+             <table class="table table-striped">
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>Issued_Books</th>
+                    <th>Action</th>
+                    <% @studm.all.each do|s| %>
+               
+                        <tr>
+                            <td><%= link_to s.id,{:action => 'show',:id => s.id}%></td>
+                            <%if s.name == nil%>
+                                <td></td>
+                            <%else%>
+                                <td><%= link_to s.name%></td>
+                            <%end%>
+                            <%if s.book_count == nil%>
+                                <td></td>
+                            <%else%>
+                                <td><%= link_to s.book_count%></td>
+                            <%end%>
+                            <td><a class='btn btn-primary btn-xs'<%=link_to 'books_show',{:action => 'books_show',:id => s.id}%>
+                            <a class='btn btn-primary btn-xs'<%=link_to 'new_book',{:action => 'new_book',:id => s.id}%>
+                            <a class='btn btn-primary btn-xs'<%=link_to 'return_book',{:controller => 'studm',:action => 'return_book',:id => s.id}%></td>
+                        </tr>
+                    <% end %>
+            </table>
+        </ol> 
+    <% end %>
+</div>

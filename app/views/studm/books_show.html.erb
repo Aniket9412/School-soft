@@ -1,0 +1,29 @@
+<div class='window'>
+    
+    <h1 class='head'><strong>Books Details</strong></h1>
+    
+    <hr class='hr'></hr>
+        <% if @books == nil %>
+                    <td><p>No Books are issue</p></td>
+        <% else %>
+            <table class="table table-striped">
+                <th><strong>Name</strong></th>
+                <th><strong>Class</strong></th>
+                <th><strong>Book_No</strong></th>
+                <th><strong>Book_Name</strong></th>
+                <th><strong>Issue Date</strong></th>
+                
+                <% @books.each do |b| %>
+                <tr>
+                    <td><%=@studm.name%></td>
+                    <td><%=@studm.std%></td>
+                    <td> <%=b.id%></td>
+                    <td><%=b.book_name%></td>
+                    <td><%=b.created_at.strftime("%b %d,%Y")%></td>
+                <%end%>
+                </tr>
+            </table>
+        <% end %>
+    <hr></hr>
+    <%= link_to 'Back',{:action => 'library_details'}%>
+</div>

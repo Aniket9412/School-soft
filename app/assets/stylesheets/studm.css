@@ -1,0 +1,36 @@
+body{
+    height: 300px;
+}
+.head
+{
+    color:#2e71b2;
+    font: bold;
+}
+.btns{
+    color:white;
+}
+.t-field{
+    margin-left: 10px;
+    margin-right:60px;
+}
+.container{
+    background-color:#e6e6fa;
+}
+.window{
+    margin-top:90px;
+    margin-left:25px;
+    margin-right: 25px;
+}
+.nav1{
+    background-color: #2E86C1;
+}
+
+.box-border{
+  border:6px solid #2e71b2;
+  border-radius:5px; 
+ padding: 20px 50px 20px 50px;
+}
+
+.nav.navbar-nav.pull-right li a {
+    color: white;
+}

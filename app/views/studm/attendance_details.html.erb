@@ -1,0 +1,36 @@
+<div class='window'>
+    
+    <h1 class='head'><strong>Attendance Details</strong></h1>
+    
+    <hr class='hr'></hr>
+    
+    <% if @studm.blank? %>
+        <p>There are no student attendance data is available</p>
+    <% else %>
+        <ol id = "studm">
+             <table class="table table-striped">
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>Attendance</th>
+                    <th>Action</th>
+                    <% @studm.all.each do|s| %>
+               
+                        <tr>
+                            <td><%= link_to s.id,{:action => 'show',:id => s.id}%></td>
+                            <%if s.name == nil%>
+                                <td></td>
+                            <% else %>
+                                <td><%= link_to s.name%></td>
+                            <% end %>
+                            <%if s.attendance == nil%>
+                                <td></td>
+                            <% else %>
+                                <td><%= link_to s.attendance%>%</td>
+                            <% end %>
+                            <td><a class='btn btn-primary btn-xs'<%=link_to 'attendance_edit',{:action => 'attendance_edit',:id => s.id}%></td>
+                        </tr>
+                    <% end %>
+            </table>
+        </ol> 
+    <% end %>
+</div>

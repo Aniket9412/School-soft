@@ -1,0 +1,52 @@
+<div class='window'>
+    
+    <h1 class='head'><strong>Fees Details</strong></h1>
+    
+    <hr class='hr'></hr>
+    
+    <% if @studm.blank? %>
+        <p>There are no student Fees data is available</p>
+    <% else %>
+        <ol id = "studm">
+             <table class="table table-striped">
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>Total Fees</th>
+                    <th>Paid Fees</th>
+                    <th>Remaining Fees</th>
+                    <th>Actions</th>
+    
+                    <% @studm.each do |s| %>
+               
+                        <tr>
+                                            
+                            <td><%= link_to s.id,{:action => 'show',:id => s.id}%></td>
+                
+                            <%if s.name == nil%>
+                                <td></td>
+                            <% else %>
+                                <td><%= link_to s.name,{:action => 'show',:id => s.id}%></td>
+                            <% end %>
+                            <% if s.total_fees == nil %>
+                                <td></td>
+                            <% else %>
+                                <td><%= link_to s.total_fees,{:action => 'show',:id => s.id}%></td>
+                            <% end %>
+                            <%if s.paid_fees == nil%>
+                                <td></td>
+                            <% else %>
+                                <td><%= link_to s.paid_fees,{:action => 'show',:id => s.id} %></td>
+                            <% end %>
+                            <% if s.remaining_fees == nil %>
+                                <td></td>
+                            <% else %>
+                                <td><%= link_to s.remaining_fees,{:action => 'show',:id => s.id}%></td>
+                            <% end %>
+                            
+                            <td> <a class='btn btn-success btn-sm'<%=link_to 'fee_edit',{:action => 'fee_edit',:id => s.id}%></td>
+                        </tr>
+                    <% end %>
+            </table>
+        </ol> 
+    <% end %>
+</div>

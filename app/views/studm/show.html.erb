@@ -1,0 +1,11 @@
+<div class='window'>
+    <h1 class='head'><strong>Student Details</strong></h1>
+    <hr></hr>
+    <p><strong>Name:</strong>&nbsp <%=@studm.name%></p><br/>
+    <p><strong>Class:</strong>&nbsp <%=@studm.std%></p><br/>
+    <p><strong>Address:</strong>&nbsp <%=@studm.address%></p><br/>
+    <p><strong>DOB:</strong>&nbsp <%=@studm.dob%></p><br/>
+    <p><strong>Date</strong>:<%=@studm.created_at.strftime("%b %d,%Y")%></p><br/>
+    <hr></hr>
+    <%= link_to 'Back',{:action => 'index'}%>
+</div>

@@ -1,0 +1,21 @@
+<div class='window'>
+    <h1 class='head'><strong>Edit Student Information</strong></h1>
+    <hr></hr>
+    <%= form_for @studm,:url => {:action => 'update',:id => @studm.id}   do |s| %>
+        <p><lable_for='name'><strong>Name</strong></lable></p>
+        <p><%=s.text_field 'name',class:'form-control t-field'%></p>
+        
+        <p><lable_for='std'><strong>Class</strong></lable></p>
+        <p><%=s.text_field 'std',class:'form-control t-field'%></p>
+        
+        <p><lable_for='address'><strong>Address</strong></lable></p>
+        <p><%= s.text_field 'address',class:'form-control t-field'%></p>
+        
+         <p><lable_for='dob'><strong>DOB</strong></lable></p>
+        <input type="date" class="form-control" name="student[dob]"  /><br/>
+        
+        <%= s.submit 'update',class:'btn btn-primary btn-sm btns'%>
+    <% end %>
+    <hr></hr>
+    <%= link_to 'Back',{:action => 'index'}%>
+</div>

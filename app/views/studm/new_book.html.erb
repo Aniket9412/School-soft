@@ -1,0 +1,14 @@
+<div class='window'>
+    <h1 class='head'><strong>Issue Book</strong></h1>
+    <hr class='hr'></hr>
+    <%= form_for(:book,:url =>{:action => 'issue_book', :id => @studm.id})   do|f| %>
+         <p><label_for='student_id'><strong>Student_Id</strong></label></p>
+         <p><%=f.text_field 'student_id',class:'form-control t-field'%></p>
+        <p><lable_for='book_name'><strong>Book Name</strong></lable></p>
+        <p><%=f.text_field 'book_name', class:'form-control t-field'%></p>
+        
+        <%= submit_tag 'issue_book',class:'btn btn-primary btn-sm btns'%>
+    <% end %>
+    <hr></hr>
+    <%= link_to 'Back',{:action => 'library_details'}%>
+</div>

@@ -1,0 +1,20 @@
+<div class="window">
+    <h1 class="head"><strong>Edit Fees Details</strong></h1>
+    <hr></hr>
+    <%= form_for @studm,:url => {:action => 'update_fees',:id => @studm.id}   do |s| %>
+        
+        <p><lable_for='name'><strong>Name</strong></lable></p>
+        <p><%=s.text_field 'name',class:'form-control t-field'%></p>
+        
+        <p><lable_for='std'><strong>Class</strong></lable></p>
+        <p><%=s.text_field 'std',class:'form-control t-field'%></p>
+        
+        <p><lable_for='total_fees'><strong>Total Fees</strong></lable></p>
+        <p><%= s.text_field 'total_fees',class:'form-control t-field'%></p>
+        
+        <p><lable_for='paid_fees'><strong>Paid Fees</strong></lable></p>
+        <p><%= s.text_field 'paid_fees',class:'form-control t-field'%></p>
+        
+        <%= s.submit 'update',class:'btn btn-primary btn-sm btns'%>
+    <% end %>
+</div>

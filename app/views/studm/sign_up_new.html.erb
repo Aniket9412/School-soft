@@ -1,0 +1,11 @@
+<div class="container">
+    <h1><strong>Sign Up</strong></h1>
+    <%= form_for Authorize.new, :url => {:controller => 'studm', :action => 'sign_up'} do |f| %>
+        <p><lable_for='name'><strong>Name</strong></lable>:<%=f.text_field :name%></p>
+        <p><lable_for='email'><strong>Email</strong></lable>:<%=f.text_field :email%></p>
+        <p><lable_for='password'><strong>Password</strong></lable>:<%=f.text_field :password%></p>
+        <%= f.submit 'sign_up'%>
+    <% end %>
+    <hr></hr>
+    <%= link_to 'Back',{:action => 'login_new'}%>
+</div>

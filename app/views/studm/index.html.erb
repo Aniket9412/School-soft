@@ -1,0 +1,40 @@
+<div class='window'>
+    
+    <h1 class='head'><strong>Student Management</strong></h1>
+    
+    <hr class='hr'></hr>
+    
+    <p style="font-size:25px;"><strong>Lists of all Student</strong></p>
+    
+    <% if @studm.blank? %>
+        <p>There are no student data is available</p>
+    <% else %>
+        <ol id = "studm">
+             <table class="table table-striped">
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>Actions</th>
+                    <% @studm.all.each do|s| %>
+               
+                        <tr>
+                            <td><%= s.id%></td>
+                            <td><%= link_to s.name%></td>
+                            <td><a class='btn btn-info btn-xs'<%= link_to 'show',{:action => "show", :id => s.id}%>
+                                <a class='btn btn-primary btn-xs'<%=link_to 'update',{:action => 'edit',:id => s.id}%>
+                                <a class='btn btn-danger btn-xs'<%=link_to 'Delete',{:action => 'delete',:id => s.id}%>
+                            </td>
+                        </tr>
+                    <% end %>
+            </table>
+        </ol> 
+    <% end %>
+    
+    <a class='btn btn-success btn-sm'<%=link_to "Add New Student",{:action => 'new'}%>
+    <hr></hr>
+   
+</div>
+
+
+
+    
+

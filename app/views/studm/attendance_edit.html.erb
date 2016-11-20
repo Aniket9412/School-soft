@@ -1,0 +1,20 @@
+<div class="window">
+    <h1 class="head"><strong>Edit Attendance Details</strong></h1>
+    <hr></hr>
+    <%= form_for @studm,:url => {:action => 'attendance_update',:id => @studm.id}   do |s| %>
+        
+        <p><lable_for='name'><strong>Name</strong></lable></p>
+        <p><%=s.text_field 'name',class:'form-control t-field'%></p>
+        
+        <p><lable_for='std'><strong>Class</strong></lable></p>
+        <p><%=s.text_field 'std',class:'form-control t-field'%></p>
+        
+        <p><lable_for='total_lectures'><strong>Total Lectures</strong></lable_for></p>
+        <p><%= s.text_field 'total_lectures',class:'form-control t-field'%></p>
+        
+        <p><lable_for='attended_lectures'><strong>Attended Lectures</strong></lable_for></p>
+        <p><%= s.text_field 'attended_lectures',class:'form-control t-field'%></p>
+        
+        <%= s.submit 'attendance_update',class:'btn btn-primary btn-sm btns'%>
+    <% end %>
+</div>

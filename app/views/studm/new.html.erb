@@ -1,0 +1,18 @@
+<div class='window'>
+    <h1 class='head'><strong>Add New Student</strong></h1>
+    <hr class='hr'></hr>
+    <%= form_for(:student,:url => {:action => 'create'})   do  |f|%>
+        <p><lable_for='name'><strong>Name:</strong></lable></p>
+        <p><%=f.text_field 'name', class:'form-control t-field'%></p>
+        <p><lable_for='std'><strong>Class</strong></lable></p>
+        <p><%=f.text_field 'std', class:'form-control t-field'%></p>
+        <p><lable_for='address'><strong>Address</strong></lable></p>
+        <p><%=f.text_field 'address', class:'form-control t-field'%></p>
+        <p><lable_for='dob'><strong>DOB</strong></lable></p>
+        <input type="date" class="form-control" name="student[dob]"/><br/>
+        <%= submit_tag 'create',class:'btn btn-primary btn-sm btns'%>
+
+    <% end %>
+    <hr></hr>
+    <a class="btn btn-primary btn-xs"<%= link_to 'Back',{:action => 'index'}%>
+</div>

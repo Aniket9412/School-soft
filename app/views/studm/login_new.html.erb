@@ -1,0 +1,9 @@
+<div class="container">
+    <h1><strong>Log In</strong></h1>
+    <hr></hr>
+    <%= form_for Authorize.new,:url => {:controller => 'studm',:action => 'login'} do |f| %>
+        <p><lable_for = 'email'><strong>Email</strong></lable>:<%= f.text_field 'email'%></p>
+        <p><lable_for = 'password'><strong>Password</strong></lable>:<%= f.text_field 'password'%></p>
+        <%= f.submit 'login'%>
+    <% end %>
+</div>
